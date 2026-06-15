@@ -57,8 +57,6 @@ const skillCategories: { title: string; color: AccentColor; skills: { name: stri
 export default function Skills() {
   return (
     <section id="skills" className="relative py-28 px-6">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-violet-950/5 to-transparent pointer-events-none" />
-
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -67,8 +65,8 @@ export default function Skills() {
           className="text-center mb-16"
         >
           <div className="section-tag mx-auto mb-6">Skills</div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: 'Clash Display' }}>
-            Tools I <span className="text-gradient">work with</span>
+          <h2 className="text-4xl md:text-5xl font-light mb-4">
+            Tools I <span className="text-gradient-accent">work with</span>
           </h2>
           <p className="text-[var(--text-secondary)] max-w-xl mx-auto text-lg">
             A focused frontend stack refined through 3.5+ years of enterprise development.
@@ -95,7 +93,7 @@ export default function Skills() {
                       <span className="text-sm font-medium text-[var(--text-primary)]">{skill.name}</span>
                       <span className="text-xs text-[var(--text-muted)] font-mono">{skill.level}%</span>
                     </div>
-                    <div className="h-1.5 rounded-full bg-[var(--border)] overflow-hidden">
+                    <div className="h-2 rounded-full bg-[#e2e8f0] overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}

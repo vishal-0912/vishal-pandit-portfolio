@@ -30,9 +30,6 @@ export default function Contact() {
 
   return (
     <section id="contact" className="relative py-28 px-6">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-950/8 to-transparent pointer-events-none" />
-      <div className="hidden md:block absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-blue-500/5 blur-[100px] pointer-events-none" />
-
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -41,8 +38,8 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <div className="section-tag mx-auto mb-6">Contact</div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: 'Clash Display' }}>
-            Let's build something <span className="text-gradient">great together</span>
+          <h2 className="text-4xl md:text-5xl font-light mb-4">
+            Let's build something <span className="text-gradient-accent">great together</span>
           </h2>
           <p className="text-[var(--text-secondary)] max-w-xl mx-auto text-lg">
             Open to frontend engineering roles, freelance projects, and interesting collaborations.
@@ -58,7 +55,7 @@ export default function Contact() {
             className="space-y-6"
           >
             <div className="glass-light rounded-2xl p-6 gradient-border">
-              <h3 className="text-xl font-bold mb-5" style={{ fontFamily: 'Clash Display' }}>
+              <h3 className="text-xl font-medium mb-5">
                 Get in touch
               </h3>
               <div className="space-y-4">
@@ -68,7 +65,7 @@ export default function Contact() {
                   { icon: <MapPin size={16} />, label: 'Location', value: 'Kolkata, West Bengal, India', href: null },
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-4 group">
-                    <div className="w-9 h-9 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 flex-shrink-0">
+                    <div className="w-9 h-9 rounded-lg bg-[rgba(0,0,0,0.04)] border border-[rgba(0,0,0,0.08)] flex items-center justify-center text-[var(--text-primary)] flex-shrink-0">
                       {item.icon}
                     </div>
                     <div>
@@ -78,7 +75,7 @@ export default function Contact() {
                           href={item.href}
                           target={item.href.startsWith('http') ? '_blank' : undefined}
                           rel="noreferrer"
-                          className="text-[var(--text-secondary)] hover:text-white transition-colors animated-underline text-sm"
+                          className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors animated-underline text-sm"
                         >
                           {item.value}
                         </a>
@@ -92,9 +89,9 @@ export default function Contact() {
             </div>
 
             <div className="glass-light rounded-2xl p-6 gradient-border">
-              <div className="flex items-center gap-2 mb-3">
+              <div className="flex items-center gap-2 mb-3 px-3 py-1.5 rounded-full bg-[#2563EB]/10 w-fit">
                 <div className="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse" />
-                <span className="text-sm font-medium text-white">Available for opportunities</span>
+                <span className="text-sm font-medium text-[#2563EB]">Available for opportunities</span>
               </div>
               <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
                 Currently open to full-time frontend engineering roles and exciting freelance projects. Response time typically within 24 hours.

@@ -16,7 +16,6 @@ const Contact = lazy(() => import('./components/sections/Contact'));
 function App() {
   return (
     <>
-      <div className="noise-overlay" aria-hidden="true" />
       <ScrollProgress />
       <CursorGlow />
       <Navbar />

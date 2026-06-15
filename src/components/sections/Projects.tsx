@@ -23,9 +23,9 @@ const projects: {
       'Enterprise-grade real-time monitoring dashboard for AWS service health across regions. Aggregates API data, visualizes incidents, and triggers intelligent alerts for operational teams.',
     icon: <Activity size={24} />,
     color: 'orange',
-    accent: 'from-orange-500 to-amber-400',
-    border: 'border-orange-500/20',
-    bg: 'bg-orange-500/8',
+    accent: 'from-[#D97706] to-[#FCD34D]',
+    border: 'border-[#D97706]/20',
+    bg: 'bg-[#D97706]/8',
     features: [
       'Real-time AWS status API integration across 30+ services',
       'Interactive dashboard with drill-down region/service views',
@@ -42,9 +42,9 @@ const projects: {
       'Sophisticated multi-step risk assessment platform for enterprise M&A due diligence. Guides stakeholders through structured workflows and generates actionable risk reports.',
     icon: <BarChart3 size={24} />,
     color: 'violet',
-    accent: 'from-violet-500 to-purple-400',
-    border: 'border-violet-500/20',
-    bg: 'bg-violet-500/8',
+    accent: 'from-[#7C3AED] to-[#C4B5FD]',
+    border: 'border-[#7C3AED]/20',
+    bg: 'bg-[#7C3AED]/8',
     features: [
       'Guided multi-step risk analysis workflows',
       'Dynamic form validation with complex conditional logic',
@@ -59,8 +59,6 @@ const projects: {
 export default function Projects() {
   return (
     <section id="projects" className="relative py-28 px-6">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-950/5 to-transparent pointer-events-none" />
-
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -69,8 +67,8 @@ export default function Projects() {
           className="text-center mb-16"
         >
           <div className="section-tag mx-auto mb-6">Projects</div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: 'Clash Display' }}>
-            Featured <span className="text-gradient">work</span>
+          <h2 className="text-4xl md:text-5xl font-light mb-4">
+            Featured <span className="text-gradient-accent">work</span>
           </h2>
           <p className="text-[var(--text-secondary)] max-w-xl mx-auto text-lg">
             Enterprise applications built for performance, scalability, and exceptional user experience.
@@ -96,10 +94,7 @@ export default function Projects() {
                       {project.icon}
                     </div>
                     <div>
-                      <h3
-                        className="text-xl font-bold text-white mb-1"
-                        style={{ fontFamily: 'Clash Display' }}
-                      >
+                      <h3 className="text-xl font-medium text-[var(--text-primary)] mb-1">
                         {project.title}
                       </h3>
                       <span className="text-xs text-[var(--text-muted)] font-mono">Enterprise Application</span>
@@ -148,18 +143,18 @@ export default function Projects() {
                           <>
                             <div className="flex gap-2">
                               {['All', 'Degraded', 'Outage'].map((t, i) => (
-                                <div key={t} className={`px-2 py-1 rounded text-xs ${i === 1 ? 'bg-orange-500/20 text-orange-400 border border-orange-500/30' : 'bg-[var(--surface)] text-[var(--text-muted)]'}`}>{t}</div>
+                                <div key={t} className={`px-2 py-1 rounded text-xs ${i === 1 ? 'bg-[rgba(0,0,0,0.08)] text-[var(--text-primary)] border border-[rgba(0,0,0,0.12)]' : 'bg-[var(--surface)] text-[var(--text-muted)]'}`}>{t}</div>
                               ))}
                             </div>
                             {['EC2', 'S3', 'Lambda', 'RDS'].map((svc, i) => (
                               <div key={svc} className="flex items-center justify-between bg-[var(--surface)] rounded-lg px-3 py-2">
                                 <span className="text-xs text-[var(--text-secondary)] font-mono">{svc}</span>
-                                <div className={`w-2 h-2 rounded-full ${i === 1 ? 'bg-red-400' : i === 2 ? 'bg-yellow-400' : 'bg-green-400'}`} />
+                                <div className={`w-2 h-2 rounded-full ${i === 1 ? 'bg-[var(--text-primary)]' : i === 2 ? 'bg-[var(--text-secondary)]' : 'bg-[var(--text-muted)]'}`} />
                               </div>
                             ))}
-                            <div className="bg-orange-500/10 border border-orange-500/20 rounded-lg px-3 py-2 flex items-center gap-2">
-                              <AlertTriangle size={12} className="text-orange-400" />
-                              <span className="text-xs text-orange-400">3 active alerts</span>
+                            <div className="bg-[rgba(0,0,0,0.04)] border border-[rgba(0,0,0,0.08)] rounded-lg px-3 py-2 flex items-center gap-2">
+                              <AlertTriangle size={12} className="text-[var(--text-primary)]" />
+                              <span className="text-xs text-[var(--text-primary)]">3 active alerts</span>
                             </div>
                           </>
                         ) : (
@@ -179,8 +174,8 @@ export default function Projects() {
                                 </div>
                               </div>
                             ))}
-                            <div className="bg-violet-500/10 border border-violet-500/20 rounded-lg px-3 py-2 mt-3">
-                              <span className="text-xs text-violet-400">Overall Risk Score: 68/100</span>
+                            <div className="bg-[rgba(0,0,0,0.04)] border border-[rgba(0,0,0,0.08)] rounded-lg px-3 py-2 mt-3">
+                              <span className="text-xs text-[var(--text-primary)]">Overall Risk Score: 68/100</span>
                             </div>
                           </>
                         )}

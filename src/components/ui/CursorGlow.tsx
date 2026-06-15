@@ -22,7 +22,7 @@ export default function CursorGlow() {
         width: 500,
         height: 500,
         borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(59,130,246,0.05) 0%, transparent 70%)',
+        background: 'radial-gradient(circle, rgba(250,61,29,0.04) 0%, transparent 70%)',
         transform: 'translate(-50%, -50%)',
         transition: 'left 0.15s ease, top 0.15s ease',
       }}

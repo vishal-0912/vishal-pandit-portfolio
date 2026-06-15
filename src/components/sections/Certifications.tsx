@@ -39,8 +39,8 @@ export default function Certifications() {
           className="text-center mb-16"
         >
           <div className="section-tag mx-auto mb-6">Certifications</div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: 'Clash Display' }}>
-            Credentials &amp; <span className="text-gradient">expertise</span>
+          <h2 className="text-4xl md:text-5xl font-light mb-4">
+            Credentials &amp; <span className="text-gradient-accent">expertise</span>
           </h2>
         </motion.div>
 
@@ -54,27 +54,21 @@ export default function Certifications() {
               transition={{ duration: 0.6, delay: i * 0.1 }}
               className="glass-light rounded-2xl p-6 gradient-border group relative overflow-hidden flex flex-col"
             >
-              {/* Background glow */}
-              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-blue-500/10 blur-[80px] pointer-events-none group-hover:bg-blue-500/15 transition-all duration-500" />
-
               <div className="relative flex flex-col gap-4 flex-1">
                 {/* Icon */}
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
-                  <Shield size={24} className="text-blue-400" />
+                <div className="w-14 h-14 rounded-2xl bg-[rgba(0,0,0,0.04)] border border-[rgba(0,0,0,0.08)] flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
+                  <Shield size={24} className="text-[var(--text-primary)]" />
                 </div>
 
                 {/* Content */}
                 <div className="flex-1">
                   <div className="flex items-start justify-between gap-4 mb-2">
-                    <h3
-                      className="text-lg font-bold text-white leading-snug"
-                      style={{ fontFamily: 'Clash Display' }}
-                    >
+                    <h3 className="text-lg font-medium text-[var(--text-primary)] leading-snug">
                       {cert.title}
                     </h3>
                     <div className="text-xs text-[var(--text-muted)] font-mono whitespace-nowrap">{cert.year}</div>
                   </div>
-                  <p className="text-blue-400 font-medium mb-3">{cert.issuer}</p>
+                  <p className="text-[var(--text-secondary)] font-medium mb-3">{cert.issuer}</p>
 
                   <p className="text-[var(--text-secondary)] text-sm leading-relaxed mb-5">
                     {cert.description}
@@ -89,7 +83,7 @@ export default function Certifications() {
               </div>
 
               {/* Decorative badge */}
-              <div className="absolute top-4 right-4 flex items-center gap-1.5 text-xs text-emerald-400 font-mono">
+              <div className="absolute top-4 right-4 flex items-center gap-1.5 text-xs text-[var(--text-secondary)] font-mono">
                 <Award size={12} />
                 Verified
               </div>

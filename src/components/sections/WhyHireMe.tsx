@@ -52,15 +52,17 @@ const strengths = [
   },
 ];
 
+const neutral = { bg: 'bg-[rgba(0,0,0,0.04)]', border: 'border-[rgba(0,0,0,0.08)]', text: 'text-[var(--text-primary)]' };
+
 const colorMap: Record<string, { bg: string; border: string; text: string }> = {
-  blue: { bg: 'bg-blue-500/8', border: 'border-blue-500/20', text: 'text-blue-400' },
-  yellow: { bg: 'bg-yellow-500/8', border: 'border-yellow-500/20', text: 'text-yellow-400' },
-  emerald: { bg: 'bg-emerald-500/8', border: 'border-emerald-500/20', text: 'text-emerald-400' },
-  violet: { bg: 'bg-violet-500/8', border: 'border-violet-500/20', text: 'text-violet-400' },
-  cyan: { bg: 'bg-cyan-500/8', border: 'border-cyan-500/20', text: 'text-cyan-400' },
-  orange: { bg: 'bg-orange-500/8', border: 'border-orange-500/20', text: 'text-orange-400' },
-  pink: { bg: 'bg-pink-500/8', border: 'border-pink-500/20', text: 'text-pink-400' },
-  indigo: { bg: 'bg-indigo-500/8', border: 'border-indigo-500/20', text: 'text-indigo-400' },
+  blue: neutral,
+  yellow: neutral,
+  emerald: neutral,
+  violet: neutral,
+  cyan: neutral,
+  orange: neutral,
+  pink: neutral,
+  indigo: neutral,
 };
 
 const stats = [
@@ -72,8 +74,6 @@ const stats = [
 export default function WhyHireMe() {
   return (
     <section id="why-hire" className="relative py-28 px-6">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-950/5 to-transparent pointer-events-none" />
-
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -82,8 +82,8 @@ export default function WhyHireMe() {
           className="text-center mb-16"
         >
           <div className="section-tag mx-auto mb-6">Why Hire Me</div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: 'Clash Display' }}>
-            What you get when you <span className="text-gradient">hire Vishal</span>
+          <h2 className="text-4xl md:text-5xl font-light mb-4">
+            What you get when you <span className="text-gradient-accent">hire Vishal</span>
           </h2>
           <p className="text-[var(--text-secondary)] max-w-xl mx-auto text-lg">
             Not just a developer. A frontend engineer who thinks about systems, quality, and outcomes.
@@ -128,7 +128,7 @@ export default function WhyHireMe() {
                 <div className={`w-10 h-10 rounded-lg ${c.bg} border ${c.border} flex items-center justify-center ${c.text} mb-4 group-hover:scale-110 transition-transform`}>
                   {s.icon}
                 </div>
-                <h3 className="font-bold text-white mb-2 text-sm">{s.title}</h3>
+                <h3 className="font-bold text-[var(--text-primary)] mb-2 text-sm">{s.title}</h3>
                 <p className="text-[var(--text-muted)] text-xs leading-relaxed">{s.desc}</p>
               </motion.div>
             );

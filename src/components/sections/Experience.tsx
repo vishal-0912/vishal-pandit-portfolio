@@ -51,14 +51,14 @@ export default function Experience() {
           className="text-center mb-16"
         >
           <div className="section-tag mx-auto mb-6">Experience</div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: 'Clash Display' }}>
-            Where I've <span className="text-gradient">created impact</span>
+          <h2 className="text-4xl md:text-5xl font-light mb-4">
+            Where I've <span className="text-gradient-accent">created impact</span>
           </h2>
         </motion.div>
 
         <div className="relative max-w-4xl mx-auto space-y-10">
           {/* Timeline line */}
-          <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-blue-500/50 via-cyan-500/30 to-transparent lg:left-8" />
+          <div className="absolute left-6 top-0 bottom-0 w-px bg-[image:var(--gradient-spectrum)] opacity-20 lg:left-8" />
 
           {roles.map((role, ri) => (
             <motion.div
@@ -70,23 +70,23 @@ export default function Experience() {
               className="relative pl-20 lg:pl-24"
             >
               {/* Dot */}
-              <div className="absolute left-4 lg:left-6 top-6 w-5 h-5 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 border-4 border-[var(--bg)] shadow-lg shadow-blue-500/30" />
+              <div
+                className="absolute left-4 lg:left-6 top-6 w-5 h-5 rounded-full border-4 border-[var(--bg)] shadow-lg"
+                style={{ background: ['#2563EB', '#0891B2', '#7C3AED', '#059669', '#D97706'][ri % 5] }}
+              />
 
               <div className="glass-light rounded-2xl p-8 gradient-border">
                 {/* Header */}
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center flex-shrink-0">
-                      <Building2 size={22} className="text-blue-400" />
+                    <div className="w-12 h-12 rounded-xl bg-[rgba(0,0,0,0.04)] border border-[rgba(0,0,0,0.08)] flex items-center justify-center flex-shrink-0">
+                      <Building2 size={22} className="text-[var(--text-primary)]" />
                     </div>
                     <div>
-                      <h3
-                        className="text-xl font-bold text-white mb-1"
-                        style={{ fontFamily: 'Clash Display' }}
-                      >
+                      <h3 className="text-xl font-medium text-[var(--text-primary)] mb-1">
                         {role.title}
                       </h3>
-                      <p className="text-blue-400 font-semibold text-lg">{role.company} · {role.location}</p>
+                      <p className="text-[var(--text-secondary)] font-medium text-lg">{role.company} · {role.location}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2 text-[var(--text-muted)] text-sm font-mono shrink-0">
@@ -111,8 +111,8 @@ export default function Experience() {
                       transition={{ delay: i * 0.06 }}
                       className="flex items-start gap-3 group"
                     >
-                      <ChevronRight size={14} className="text-blue-400 mt-1.5 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
-                      <span className="text-[var(--text-secondary)] text-sm leading-relaxed group-hover:text-white transition-colors">
+                      <ChevronRight size={14} className="text-[var(--text-muted)] mt-1.5 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
+                      <span className="text-[var(--text-secondary)] text-sm leading-relaxed group-hover:text-[var(--text-primary)] transition-colors">
                         {resp}
                       </span>
                     </motion.div>

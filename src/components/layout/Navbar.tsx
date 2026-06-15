@@ -50,10 +50,10 @@ export default function Navbar() {
             className="flex items-center gap-2 group"
             whileHover={{ scale: 1.02 }}
           >
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-black flex items-center justify-center">
               <Code2 size={16} className="text-white" />
             </div>
-            <span className="font-bold text-sm tracking-wide" style={{ fontFamily: 'Clash Display' }}>
+            <span className="font-medium text-sm tracking-wide">
               vishal<span className="text-gradient">pandit</span>
             </span>
           </motion.a>
@@ -67,14 +67,14 @@ export default function Navbar() {
                   key={link.label}
                   onClick={() => scrollTo(link.href)}
                   className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 animated-underline ${
-                    isActive ? 'text-white' : 'text-[var(--text-secondary)] hover:text-white'
+                    isActive ? 'text-[var(--text-primary)]' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
                   }`}
                   whileHover={{ y: -1 }}
                 >
                   {isActive && (
                     <motion.div
                       layoutId="nav-active"
-                      className="absolute inset-0 rounded-lg bg-white/5"
+                      className="absolute inset-0 rounded-lg bg-black/5"
                       transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                     />
                   )}
@@ -88,6 +88,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-3">
             <motion.a
               href="mailto:vishalpandit787@gmail.com"
+              onClick={(e) => { window.location.href = 'mailto:vishalpandit787@gmail.com'; e.preventDefault(); }}
               className="btn-primary text-xs px-5 py-2.5"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -98,7 +99,7 @@ export default function Navbar() {
 
           {/* Mobile hamburger */}
           <motion.button
-            className="md:hidden text-[var(--text-secondary)] hover:text-white p-2"
+            className="md:hidden text-[var(--text-secondary)] hover:text-[var(--text-primary)] p-2"
             onClick={() => setMobileOpen(!mobileOpen)}
             whileTap={{ scale: 0.95 }}
           >
@@ -123,13 +124,14 @@ export default function Navbar() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.05 }}
                 onClick={() => scrollTo(link.href)}
-                className="block w-full text-left px-4 py-3 text-[var(--text-secondary)] hover:text-white hover:bg-white/5 rounded-lg transition-colors duration-200 font-medium"
+                className="block w-full text-left px-4 py-3 text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-black/5 rounded-lg transition-colors duration-200 font-medium"
               >
                 {link.label}
               </motion.button>
             ))}
             <motion.a
               href="mailto:vishalpandit787@gmail.com"
+              onClick={(e) => { window.location.href = 'mailto:vishalpandit787@gmail.com'; e.preventDefault(); }}
               className="btn-primary w-full justify-center mt-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

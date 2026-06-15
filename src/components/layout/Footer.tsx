@@ -23,10 +23,10 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-black flex items-center justify-center">
                 <Code2 size={16} className="text-white" />
               </div>
-              <span className="font-bold" style={{ fontFamily: 'Clash Display' }}>
+              <span className="font-medium">
                 vishal<span className="text-gradient">pandit</span>
               </span>
             </div>
@@ -37,13 +37,13 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="text-sm font-semibold text-white mb-4">Navigation</h4>
+            <h4 className="text-sm font-semibold text-[var(--text-primary)] mb-4">Navigation</h4>
             <div className="space-y-2">
               {navLinks.map((link) => (
                 <button
                   key={link.label}
                   onClick={() => scrollTo(link.href)}
-                  className="block text-sm text-[var(--text-muted)] hover:text-white transition-colors animated-underline"
+                  className="block text-sm text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors animated-underline"
                 >
                   {link.label}
                 </button>
@@ -53,7 +53,7 @@ export default function Footer() {
 
           {/* Social */}
           <div>
-            <h4 className="text-sm font-semibold text-white mb-4">Connect</h4>
+            <h4 className="text-sm font-semibold text-[var(--text-primary)] mb-4">Connect</h4>
             <div className="flex gap-3">
               {[
                 { icon: <GithubIcon size={16} />, href: 'https://github.com/vishal-0912', label: 'GitHub' },
@@ -63,10 +63,11 @@ export default function Footer() {
                 <motion.a
                   key={s.label}
                   href={s.href}
+                  onClick={s.href.startsWith('mailto:') ? (e) => { window.location.href = s.href; e.preventDefault(); } : undefined}
                   target={s.href.startsWith('http') ? '_blank' : undefined}
                   rel={s.href.startsWith('http') ? 'noreferrer' : undefined}
                   aria-label={s.label}
-                  className="w-9 h-9 rounded-lg glass flex items-center justify-center text-[var(--text-secondary)] hover:text-white hover:border-blue-500/40 transition-all"
+                  className="w-9 h-9 rounded-full glass flex items-center justify-center text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-all"
                   whileHover={{ scale: 1.1, y: -2 }}
                 >
                   {s.icon}

@@ -3,20 +3,20 @@ import { ArrowDown, Download, ExternalLink, Mail } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '../ui/BrandIcons';
 
 const floatingBadges = [
-  { label: 'React.js', x: '10%', y: '20%', delay: 0 },
-  { label: 'TypeScript', x: '78%', y: '18%', delay: 0.5 },
-  { label: 'Tailwind', x: '5%', y: '70%', delay: 1 },
-  { label: 'Next.js', x: '82%', y: '65%', delay: 1.5 },
-  { label: 'Vite', x: '70%', y: '82%', delay: 0.8 },
+  { label: 'React.js', x: '10%', y: '20%', delay: 0, color: '#2563EB' },
+  { label: 'TypeScript', x: '78%', y: '18%', delay: 0.5, color: '#0891B2' },
+  { label: 'Tailwind', x: '5%', y: '70%', delay: 1, color: '#7C3AED' },
+  { label: 'Next.js', x: '82%', y: '65%', delay: 1.5, color: '#059669' },
+  { label: 'Vite', x: '70%', y: '82%', delay: 0.8, color: '#D97706' },
 ];
 
 const codeLines = [
-  { text: 'const developer = {', color: 'text-blue-400' },
-  { text: '  name: "Vishal Pandit",', color: 'text-green-400' },
-  { text: '  role: "Frontend Engineer",', color: 'text-cyan-400' },
-  { text: '  exp: "3.5+ years",', color: 'text-yellow-400' },
-  { text: '  passion: "great UX",', color: 'text-purple-400' },
-  { text: '};', color: 'text-blue-400' },
+  { text: 'const developer = {', color: 'text-[#7C3AED]' },
+  { text: '  name: "Vishal Pandit",', color: 'text-[#059669]' },
+  { text: '  role: "Frontend Engineer",', color: 'text-[#059669]' },
+  { text: '  exp: "3.5+ years",', color: 'text-[#059669]' },
+  { text: '  passion: "great UX",', color: 'text-[#059669]' },
+  { text: '};', color: 'text-[#7C3AED]' },
 ];
 
 export default function Hero() {
@@ -28,11 +28,10 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden grid-bg pt-20">
+    <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20">
       {/* Ambient glow blobs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-blue-600/10 blur-[100px] pointer-events-none" />
-      <div className="hidden md:block absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-cyan-500/8 blur-[100px] pointer-events-none" />
-      <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-violet-600/5 blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-[image:var(--gradient-spectrum)] opacity-[0.12] blur-[100px] pointer-events-none" />
+      <div className="hidden md:block absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-[image:var(--gradient-spectrum)] opacity-[0.08] blur-[100px] pointer-events-none" />
 
       {/* Floating tech badges */}
       {floatingBadges.map((badge) => (
@@ -48,7 +47,7 @@ export default function Hero() {
             className="float-anim"
             style={{ animationDelay: `${badge.delay}s` }}
           >
-            <span className="text-blue-400 mr-1.5">◆</span>
+            <span style={{ color: badge.color }} className="mr-1.5">◆</span>
             {badge.label}
           </div>
         </motion.div>
@@ -74,8 +73,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-6xl md:text-7xl lg:text-8xl font-bold mb-4 leading-none tracking-tight"
-          style={{ fontFamily: 'Clash Display' }}
+          className="text-6xl md:text-7xl lg:text-8xl font-light mb-4 leading-none tracking-tight"
         >
           Vishal{' '}
           <span className="text-gradient">Pandit</span>
@@ -88,14 +86,14 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.25 }}
           className="flex items-center justify-center gap-3 mb-6"
         >
-          <div className="h-px w-12 bg-gradient-to-r from-transparent to-blue-500" />
+          <div className="h-px w-12 bg-gradient-to-r from-transparent to-[rgba(0,0,0,0.2)]" />
           <span
             className="text-lg md:text-xl font-medium text-[var(--text-secondary)]"
             style={{ fontFamily: 'JetBrains Mono' }}
           >
             Frontend Developer
           </span>
-          <div className="h-px w-12 bg-gradient-to-l from-transparent to-blue-500" />
+          <div className="h-px w-12 bg-gradient-to-l from-transparent to-[rgba(0,0,0,0.2)]" />
         </motion.div>
 
         {/* Tagline */}
@@ -106,10 +104,10 @@ export default function Hero() {
           className="text-lg md:text-xl text-[var(--text-secondary)] max-w-2xl mx-auto leading-relaxed mb-10"
         >
           Building{' '}
-          <span className="text-white font-semibold">scalable, high-performance</span>
+          <span className="text-[var(--text-primary)] font-medium">scalable, high-performance</span>
           {' '}frontend experiences with React, Next.js, TypeScript,
           and{' '}
-          <span className="text-white font-semibold">modern UI architecture</span>.
+          <span className="text-[var(--text-primary)] font-medium">modern UI architecture</span>.
         </motion.p>
 
         {/* CTAs */}
@@ -175,7 +173,7 @@ export default function Hero() {
               >
                 {line.text}
                 {i === codeLines.length - 1 && (
-                  <span className="inline-block w-2 h-4 bg-blue-400 ml-1 cursor-blink" />
+                  <span className="inline-block w-2 h-4 bg-[var(--text-primary)] ml-1 cursor-blink" />
                 )}
               </motion.div>
             ))}
@@ -197,10 +195,11 @@ export default function Hero() {
             <motion.a
               key={social.label}
               href={social.href}
+              onClick={social.href.startsWith('mailto:') ? (e) => { window.location.href = social.href; e.preventDefault(); } : undefined}
               target={social.href.startsWith('http') ? '_blank' : undefined}
               rel={social.href.startsWith('http') ? 'noreferrer' : undefined}
               aria-label={social.label}
-              className="w-10 h-10 rounded-xl glass flex items-center justify-center text-[var(--text-secondary)] hover:text-white hover:border-blue-500/40 transition-all duration-200"
+              className="w-10 h-10 rounded-full glass flex items-center justify-center text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-all duration-200"
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >

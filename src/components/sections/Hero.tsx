@@ -30,31 +30,26 @@ export default function Hero() {
   return (
     <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20">
       {/* Ambient glow blobs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-[image:var(--gradient-spectrum)] opacity-[0.12] blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 rounded-full bg-[image:var(--gradient-spectrum)] opacity-[0.12] blur-[60px] sm:blur-[80px] md:blur-[100px] pointer-events-none" />
       <div className="hidden md:block absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-[image:var(--gradient-spectrum)] opacity-[0.08] blur-[100px] pointer-events-none" />
 
       {/* Floating tech badges */}
       {floatingBadges.map((badge) => (
         <motion.div
           key={badge.label}
-          className="hidden lg:flex absolute tech-badge pointer-events-none"
-          style={{ left: badge.x, top: badge.y }}
+          className="!hidden lg:!flex absolute tech-badge float-anim pointer-events-none"
+          style={{ left: badge.x, top: badge.y, animationDelay: `${badge.delay}s` }}
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1.5 + badge.delay, duration: 0.5 }}
         >
-          <div
-            className="float-anim"
-            style={{ animationDelay: `${badge.delay}s` }}
-          >
-            <span style={{ color: badge.color }} className="mr-1.5">◆</span>
-            {badge.label}
-          </div>
+          <span style={{ color: badge.color }} className="mr-1.5">◆</span>
+          {badge.label}
         </motion.div>
       ))}
 
       {/* Main content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
         {/* Status badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -73,7 +68,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-6xl md:text-7xl lg:text-8xl font-light mb-4 leading-none tracking-tight"
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light mb-4 leading-none tracking-tight"
         >
           Vishal{' '}
           <span className="text-gradient">Pandit</span>
@@ -216,7 +211,6 @@ export default function Hero() {
         transition={{ delay: 1.8 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[var(--text-muted)]"
       >
-        <span className="text-xs font-mono tracking-widest uppercase">Scroll</span>
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ repeat: Infinity, duration: 1.8 }}

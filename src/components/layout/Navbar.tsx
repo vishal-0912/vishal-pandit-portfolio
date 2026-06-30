@@ -40,8 +40,8 @@ export default function Navbar() {
           scrolled ? 'py-3' : 'py-5'
         }`}
       >
-        <div className={`mx-auto max-w-6xl px-6 flex items-center justify-between transition-all duration-500 ${
-          scrolled ? 'glass rounded-2xl py-3 px-6 shadow-xl' : ''
+        <div className={`mx-auto max-w-6xl px-6 flex items-center justify-between navbar-solid transition-all duration-500 ${
+          scrolled ? 'rounded-2xl py-3 px-6 shadow-xl' : ''
         }`}>
           {/* Logo */}
           <motion.a

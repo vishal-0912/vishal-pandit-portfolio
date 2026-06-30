@@ -44,6 +44,12 @@ body {
   box-shadow: rgba(0,0,0,0.08) 0px 0px 8px 0px;
 }
 
+.navbar-solid {
+  background: rgba(248, 248, 248, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
 .glass-light {
   background: rgba(255,255,255,0.9);
   backdrop-filter: blur(24px);

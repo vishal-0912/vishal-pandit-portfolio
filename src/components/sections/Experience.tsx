@@ -58,7 +58,7 @@ export default function Experience() {
 
         <div className="relative max-w-4xl mx-auto space-y-10">
           {/* Timeline line */}
-          <div className="absolute left-6 top-0 bottom-0 w-px bg-[image:var(--gradient-spectrum)] opacity-20 lg:left-8" />
+          <div className="absolute left-3 sm:left-6 top-0 bottom-0 w-px bg-[image:var(--gradient-spectrum)] opacity-20 lg:left-8" />
 
           {roles.map((role, ri) => (
             <motion.div
@@ -67,11 +67,11 @@ export default function Experience() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: ri * 0.1 }}
-              className="relative pl-20 lg:pl-24"
+              className="relative pl-10 sm:pl-20 lg:pl-24"
             >
               {/* Dot */}
               <div
-                className="absolute left-4 lg:left-6 top-6 w-5 h-5 rounded-full border-4 border-[var(--bg)] shadow-lg"
+                className="absolute left-1 sm:left-4 lg:left-6 top-6 w-5 h-5 rounded-full border-4 border-[var(--bg)] shadow-lg"
                 style={{ background: ['#2563EB', '#0891B2', '#7C3AED', '#059669', '#D97706'][ri % 5] }}
               />
 

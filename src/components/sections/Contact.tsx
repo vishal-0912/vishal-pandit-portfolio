@@ -104,8 +104,9 @@ export default function Contact() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            className="h-full"
           >
-            <form onSubmit={handleSubmit} className="glass-light rounded-2xl p-8 gradient-border space-y-5">
+            <form onSubmit={handleSubmit} className="glass-light rounded-2xl p-8 gradient-border space-y-5 h-full flex flex-col">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="contact-name" className="block text-xs text-[var(--text-muted)] mb-1.5 font-mono">Your Name</label>
@@ -132,12 +133,11 @@ export default function Contact() {
                   />
                 </div>
               </div>
-              <div>
+              <div className="flex-1 flex flex-col">
                 <label htmlFor="contact-message" className="block text-xs text-[var(--text-muted)] mb-1.5 font-mono">Message</label>
                 <textarea
                   id="contact-message"
-                  className="input-field resize-none"
-                  rows={5}
+                  className="input-field resize-none flex-1 min-h-32"
                   placeholder="Tell me about your project or opportunity..."
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}

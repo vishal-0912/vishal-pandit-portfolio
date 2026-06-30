@@ -30,7 +30,7 @@ const certifications = [
 
 export default function Certifications() {
   return (
-    <section id="certifications" className="relative py-28 px-6">
+    <section id="certifications" className="relative py-12 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

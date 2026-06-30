@@ -56,7 +56,7 @@ const skillCategories: { title: string; color: AccentColor; skills: { name: stri
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative py-28 px-6">
+    <section id="skills" className="relative py-12 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

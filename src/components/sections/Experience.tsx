@@ -40,7 +40,7 @@ const roles = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative py-28 px-6">
+    <section id="experience" className="relative py-12 px-6">
       <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[var(--border)] to-transparent -translate-x-1/2 pointer-events-none hidden lg:block" />
 
       <div className="max-w-6xl mx-auto">

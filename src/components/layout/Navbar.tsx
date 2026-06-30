@@ -115,7 +115,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed top-20 left-4 right-4 z-40 glass rounded-2xl p-6 shadow-2xl"
+            className="fixed top-20 left-4 right-4 z-40 navbar-solid rounded-2xl p-6 shadow-2xl"
           >
             {navLinks.map((link, i) => (
               <motion.button

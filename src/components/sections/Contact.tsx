@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import { Mail, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { LinkedinIcon } from '../ui/BrandIcons';
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xvznlzjb';
+const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
+const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
@@ -13,12 +14,19 @@ export default function Contact() {
     e.preventDefault();
     setStatus('sending');
     try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
+      const formData = new FormData();
+      formData.append('name', form.name);
+      formData.append('email', form.email);
+      formData.append('message', form.message);
+      formData.append('access_key', WEB3FORMS_ACCESS_KEY);
+
+      const res = await fetch(WEB3FORMS_ENDPOINT, {
         method: 'POST',
-        headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        headers: { Accept: 'application/json' },
+        body: formData,
       });
-      if (!res.ok) throw new Error('Request failed');
+      const data = await res.json();
+      if (!data.success) throw new Error(data.message || 'Request failed');
       setStatus('sent');
       setForm({ name: '', email: '', message: '' });
       setTimeout(() => setStatus('idle'), 4000);
